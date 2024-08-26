@@ -1,0 +1,7 @@
+.main p {
+  color: $secondary-color;
+
+  @include desktop {
+    color: black;
+  }
+}

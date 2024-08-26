@@ -1,0 +1,70 @@
+$tablet-max: $laptop - 1;
+$laptop-max: $desktop - 1;
+
+// Media queries
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: $tablet) and (max-width: $tablet-max) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (min-width: $laptop) and (max-width: $laptop-max) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}
+
+// Buttons
+@mixin button-style($color, $text-color, $border: false) {
+    background-color: $color;
+    color: $text-color;
+    padding: 5px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+
+    @if $border {
+        border: 1px solid $text-color;
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+
+// Flexbox mixins
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@mixin flex-column {
+    @include flex;
+    flex-direction: column;
+}
+
+@mixin flex-row {
+    @include flex;
+    flex-direction: row;
+}
+
+// Gradient
+@mixin linear-gradient($direction: horizontal) {
+    background: linear-gradient(to #{$direction},
+        #732895,
+        #478C5C);
+}

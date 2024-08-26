@@ -1,0 +1,38 @@
+// Typography utility classes
+
+.heading {
+    font-size: $font-size-xxl;
+}
+
+.headingSec {
+    font-size: $font-size-xl;
+}
+
+.heading,
+.headingSec {
+    color: $secondary-color;
+}
+
+.text {
+    font-size: $font-size-md;
+}
+
+.textAlt {
+    font-size: $font-size-mlg;
+    text-transform: uppercase;
+}
+
+.text,
+.textAlt {
+    color: $primary-color;
+}
+
+// Small Components utility clases
+
+.buttonPrimary {
+    @include button-style($cta-color, $white-color);
+}
+
+.buttonSecondary {
+    @include button-style(transparent, $cta-color, true);
+}

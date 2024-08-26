@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Beiruti:wght@200..900&display=swap');
+
+// Import variables and mixins
+@import './_variables';
+@import './_mixins';
+@import './_utils';
+
+
+// Define global styles
+.main {
+  font-family: 'Beiruti', 'Tajawal', 'Lalezar', Arial, sans-serif, system-ui, -apple-system;
+  box-sizing: border-box;
+  margin: 0;
+  color: red;
+  padding: 0;
+}
