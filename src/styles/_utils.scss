@@ -15,17 +15,17 @@
 
 .text {
     font-size: $font-size-md;
+    color: $secondary-color;
 }
 
 .textAlt {
-    font-size: $font-size-mlg;
+    color: $primary-color;
+    // font-size: $font-size-mlg;
+    font-weight: bold;
+    letter-spacing: 1px;
     text-transform: uppercase;
 }
 
-.text,
-.textAlt {
-    color: $primary-color;
-}
 
 // Small Components utility clases
 
@@ -34,5 +34,11 @@
 }
 
 .buttonSecondary {
-    @include button-style(transparent, $cta-color, true);
+    @include button-style($white-color, $cta-color, true);
+}
+
+.buttonWhite {
+    @include button-style($white-color, $primary-color);
+    text-transform: capitalize;
+    font-weight: 400;
 }

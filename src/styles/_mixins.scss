@@ -29,13 +29,21 @@ $laptop-max: $desktop - 1;
 // Buttons
 @mixin button-style($color, $text-color, $border: false) {
     background-color: $color;
-    color: $text-color;
-    padding: 5px 20px;
+    padding: 3px 20px;
     border-radius: 50px;
+    border: none;
     cursor: pointer;
+    min-width: 230px;
+    color: $text-color !important;
+
+    @extend .textAlt;
 
     @if $border {
         border: 1px solid $text-color;
+
+        &:hover {
+            filter: contrast(.85);
+        }
     }
 
     &:hover {
@@ -57,14 +65,7 @@ $laptop-max: $desktop - 1;
     flex-direction: column;
 }
 
-@mixin flex-row {
-    @include flex;
-    flex-direction: row;
-}
-
-// Gradient
-@mixin linear-gradient($direction: horizontal) {
-    background: linear-gradient(to #{$direction},
-        #732895,
-        #478C5C);
+// Gradient\
+@mixin linear-gradient($direction: to right) {
+    background-image: linear-gradient($direction, rgba($cta-color, 0.5) 10%, rgba($cta-color, 0.4) 30%, rgba($secondary-color, 0.4) 70%, rgba($primary-color, 0.5) 120%);
 }
