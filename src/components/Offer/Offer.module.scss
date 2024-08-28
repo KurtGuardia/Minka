@@ -2,7 +2,6 @@
     &List {
         @include flex;
         margin-top: 5rem;
-gap: 5rem;
 
 
         &Card {
@@ -10,6 +9,7 @@ gap: 5rem;
 
             &Title {
                 @include flex;
+                gap: 1rem !important;
                 align-items: center;
                 justify-content: flex-start;
                 margin-bottom: 3rem;
@@ -21,7 +21,7 @@ gap: 5rem;
         }
     }
 
-    & button{
+    & button {
         display: block;
         margin: 10rem auto;
     }

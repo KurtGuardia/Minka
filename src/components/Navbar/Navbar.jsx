@@ -10,7 +10,8 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 500) {
+      const viewportHeight = window.innerHeight
+      if (window.scrollY > viewportHeight * 1.5) {
         setIsSticky(true)
       } else {
         setIsSticky(false)
@@ -47,7 +48,12 @@ const Navbar = () => {
               <Link href='/donar'>Donar</Link>
             </li>
             <li className={styles.li}>
-              <Link href='/ingresar' className={styles.buttonWhite}>Ingresar</Link>
+              <Link
+                href='/ingresar'
+                className={styles.buttonWhite}
+              >
+                Ingresar
+              </Link>
             </li>
           </ul>
         </nav>

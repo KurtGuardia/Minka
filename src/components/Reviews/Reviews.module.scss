@@ -1,0 +1,46 @@
+.reviews {
+    & .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 15rem;
+        margin: 8rem auto 0;
+
+        @include laptop{
+            grid-gap: 5rem;
+        }
+    }
+
+    &Card {
+        @extend .text;
+        @include flex-column;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        background-color: $cta-color-transparent;
+        border-radius: 4rem;
+        color: $black-color;
+        padding: 7rem 3rem 3rem;
+
+
+        & img {
+            position: absolute;
+            top: -15%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: .5rem $white-color solid;
+            border-radius: 50%;
+        }
+
+        &Name {
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: auto;
+        }
+
+    }
+
+    & button {
+        display: block;
+        margin: 10rem auto;
+    }
+}

@@ -15,7 +15,7 @@ $laptop-max: $desktop - 1;
 }
 
 @mixin laptop {
-    @media (min-width: $laptop) and (max-width: $laptop-max) {
+    @media (min-width: $laptop) and (max-width: $desktop) {
         @content;
     }
 }
@@ -53,17 +53,21 @@ $laptop-max: $desktop - 1;
     }
 }
 
-
 // Flexbox mixins
 @mixin flex {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 10px
+    gap: 10rem;
+
+    @include laptop{
+        gap: 5rem
+    }
 }
 
 @mixin flex-column {
     @include flex;
+    gap: 1.5rem !important;
     flex-direction: column;
 }
 

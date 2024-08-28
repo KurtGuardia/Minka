@@ -4,12 +4,12 @@ import styles from './Offer.module.scss'
 export default function Offer() {
   return (
     <div className={styles.offer}>
-      <div className={styles.textAlt}>
+      <p className={styles.textAlt}>
         Plataforma de Donaciones
-      </div>
-      <div className={styles.headingSec}>
+      </p>
+      <h2 className={styles.headingSec}>
         Lo que ofrece Minka
-      </div>
+      </h2>
 
       <div className={styles.offerList}>
         <div className={styles.offerListCard}>
