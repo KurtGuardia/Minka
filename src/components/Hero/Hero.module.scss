@@ -1,12 +1,11 @@
 .hero {
+
     &Top {
-        width: 70%;
         margin: auto;
         margin-top: 8rem;
-        margin-bottom: 10rem;
 
         &Text {
-            width: 40%;
+            width: 60%;
         }
 
         & button {
@@ -16,9 +15,11 @@
     }
 
     &Img {
+        overflow: hidden;
         position: relative;
-        width: 100%;
         aspect-ratio: 1440 / 697;
+        padding: 0;
+        margin: 10rem -20rem;
 
         & img {
             filter: grayscale(100%);

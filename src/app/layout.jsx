@@ -2,7 +2,7 @@ import styles from './page.module.scss'
 import Navbar from '../components/Navbar/Navbar'
 
 export const metadata = {
-  title: 'Minka: Tu plataforma para donaciones en Bolivia',
+  title: 'Minka: Ayudando Bolivia',
   description:
     'Minka es una plataforma que centraliza las donaciones para diferentes causas en Bolivia. Es una excelente manera de encontrar causas que te importan y apoyarlas financieramente. Con Minka, puedes hacer una diferencia en las vidas de las personas necesitadas.',
 }

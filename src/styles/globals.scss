@@ -17,7 +17,20 @@ $rem-base: 10px;
   box-sizing: border-box;
   font-size: $rem-base;
 
-  a {
+  & main {
+    padding: 0 15rem;
+    overflow: hidden;
+
+    & h2 {
+      margin: 3rem
+    }
+
+    p{
+      margin: 0
+    }
+  }
+
+  & a {
     @extend .text;
     text-decoration: none;
     border-bottom: 1px solid transparent;

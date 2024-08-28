@@ -1,0 +1,28 @@
+.offer {
+    &List {
+        @include flex;
+        margin-top: 5rem;
+gap: 5rem;
+
+
+        &Card {
+            flex: 1;
+
+            &Title {
+                @include flex;
+                align-items: center;
+                justify-content: flex-start;
+                margin-bottom: 3rem;
+
+                & p {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    & button{
+        display: block;
+        margin: 10rem auto;
+    }
+}

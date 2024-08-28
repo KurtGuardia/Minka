@@ -4,7 +4,7 @@ import img from '../../../public/child.png'
 
 export default function Hero() {
   return (
-    <div className={styles.hero}>
+    <div className={`section ${styles.hero}`}>
       <div className={styles.heroTop}>
         <h1 className={styles.heading}>
           Apoya a tu comunidad
