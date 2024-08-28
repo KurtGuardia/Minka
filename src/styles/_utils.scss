@@ -20,7 +20,7 @@
 
 .textAlt {
     color: $primary-color;
-    // font-size: $font-size-mlg;
+    font-size: $font-size-mlg;
     font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -40,5 +40,10 @@
 .buttonWhite {
     @include button-style($white-color, $primary-color);
     text-transform: capitalize;
-    font-weight: 400;
+}
+
+.buttonPrimary,
+.buttonSecondary,
+.buttonWhite {
+    font-size: 16px;
 }

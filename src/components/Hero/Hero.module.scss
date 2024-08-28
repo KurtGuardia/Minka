@@ -1,0 +1,27 @@
+.hero {
+    &Top {
+        width: 70%;
+        margin: auto;
+        margin-top: 8rem;
+        margin-bottom: 10rem;
+
+        &Text {
+            width: 40%;
+        }
+
+        & button {
+            margin: 20px;
+            margin-left: 0;
+        }
+    }
+
+    &Img {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1440 / 697;
+
+        & img {
+            filter: grayscale(100%);
+        }
+    }
+}

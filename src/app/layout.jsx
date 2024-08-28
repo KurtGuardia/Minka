@@ -1,5 +1,5 @@
 import styles from './page.module.scss'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/Navbar/Navbar'
 
 export const metadata = {
   title: 'Minka: Tu plataforma para donaciones en Bolivia',
