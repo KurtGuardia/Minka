@@ -30,7 +30,7 @@ $laptop-max: $desktop - 1;
 @mixin button-style($color, $text-color, $border: false) {
     background-color: $color;
     padding: .7rem 2rem;
-    border-radius: 5rem;
+    border-radius: $border-radius;
     border: none;
     cursor: pointer;
     min-width: 23rem;
