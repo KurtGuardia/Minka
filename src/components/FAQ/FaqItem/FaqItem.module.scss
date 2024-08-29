@@ -1,0 +1,19 @@
+.faq {
+    margin-bottom: 1rem;
+
+    .faqQuestion {
+        @extend .text;
+        @include flex;
+        justify-content: space-between;
+        cursor: pointer;
+
+        & .open{
+            transform: rotate(180deg)
+        }
+    }
+
+    .faqAnswer {
+        @extend .text;
+        margin: 1rem 0;
+    }
+}

@@ -24,7 +24,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`${styles.header} ${
+      className={`${styles.navbar} ${
         isSticky ? styles.sticky : ''
       }`}
     >

@@ -1,0 +1,8 @@
+.faq {
+    &Subtitle {
+        @extend .text;
+        color: $tertiary-color;
+        font-weight: bold;
+        margin: 2rem 0 !important;
+    }
+}
