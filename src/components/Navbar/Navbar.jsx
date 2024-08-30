@@ -5,11 +5,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from './Navbar.module.scss'
 import logo from '../../../public/logo-white.svg'
-// import chevron from '../../../public/icons/chevron.svg'
+import { useOutsideClick } from '@/hooks/useOutsideClick'
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false)
   const [displayAbout, setDisplayAbout] = useState(false)
+  const ref = useOutsideClick(() => setDisplayAbout(false))
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,9 +21,17 @@ const Navbar = () => {
         setIsSticky(false)
       }
     }
+    const handleCloseAbout = () => {
+      setDisplayAbout(false)
+    }
+
     window.addEventListener('scroll', handleScroll)
-    return () =>
+    window.addEventListener('scroll', handleCloseAbout)
+
+    return () => {
       window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('scroll', handleCloseAbout)
+    }
   }, [])
 
   return (
@@ -32,13 +41,15 @@ const Navbar = () => {
       }`}
     >
       <div className={styles.container}>
-        <Link href='/'
+        <Link
+          href='/'
           onClick={(e) => {
             e.preventDefault()
             document
               .getElementById('top')
               .scrollIntoView({ behavior: 'smooth' })
-          }}>
+          }}
+        >
           <Image
             src={logo}
             alt='Minka Logo'
@@ -55,16 +66,14 @@ const Navbar = () => {
                   setDisplayAbout(!displayAbout)
                 }
               >
-                <p>Acerca de</p>
-                {/* <Image
-                src={chevron}
-                alt='dropdown'
-                width={10}
-              /> */}
+                <p>Acerca de &nbsp; &darr;</p>
                 <ul
                   style={{
-                    display: displayAbout ? 'block' : 'none',
+                    display: displayAbout
+                      ? 'block'
+                      : 'none',
                   }}
+                  ref={ref}
                 >
                   <Link href='#'>Nosotros</Link>
                   <Link href='#faq'>FAQ</Link>

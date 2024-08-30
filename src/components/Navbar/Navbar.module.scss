@@ -38,7 +38,6 @@
           & ul {
             @extend .text;
             cursor: pointer;
-            // display: none;
             color: $white-color;
             background-color: $secondary-color;
             position: absolute;
@@ -48,8 +47,12 @@
             border-radius: .5rem;
             list-style: none;
 
-            &>* {
-              display: block;
+            &>a {
+              display: block;width: auto;
+
+              &:hover{
+                border-bottom: 1px white dashed;
+              }
             }
           }
         }
