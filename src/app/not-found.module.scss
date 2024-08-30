@@ -1,0 +1,12 @@
+.notFound{
+    @include flex;
+    height: 80vh;
+    align-items: center;
+    text-align: center;
+
+    & a{
+        @extend .heading;
+        text-decoration: underline;
+        color: $tertiary-color;
+    }
+}
