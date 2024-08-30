@@ -34,14 +34,11 @@ $rem-base: 10px;
 
   & a {
     @extend .text;
+    color: $white-color;
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: all .5s ease;
     width: fit-content;
-
-    &:hover:not(:has(img)) {
-      border-bottom: 1px solid $white-color;
-    }
   }
 
   ::-webkit-scrollbar {

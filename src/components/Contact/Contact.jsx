@@ -10,7 +10,13 @@ export default function Contact() {
         Póngase en contacto con nostros.
       </p>
       <button className={styles.buttonPrimary}>
-        Contact
+        <a
+          href='mailto:kurtguardia@gmail.com?subject=Great%20website!&body=Love%20the%20landing%20page!!%20'
+          target='_blank'
+          rel='noreferrer'
+        >
+          Contact
+        </a>
       </button>
     </div>
   )

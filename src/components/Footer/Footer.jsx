@@ -54,7 +54,7 @@ export default function Footer() {
           <a
             target='_blank'
             rel='noreferrer'
-            href='https://wa.me/+34685360189?text=Hello Kurt I love your development you are a f**king crack!'
+            href='https://wa.me/+34685360189?text=Hello%20Kurt%20I%20love%20your%20development%20you%20are%20a%20f**king%20crack!'
           >
             <Image
               src={whatsapp}
@@ -66,35 +66,61 @@ export default function Footer() {
       </div>
       <div className={styles.footerInfo}>
         <div>
-          <p className={styles.footerInfoTitle}>
-            Saber más
-          </p>
-          <p className={styles.text}>Sobre Minka</p>
-          <p className={styles.text}>Equipo</p>
-          <p className={styles.text}>
-            Condiciones generales
-          </p>
-          <p className={styles.text}>Confidencialidad</p>
+          <Link href='/saber'>
+            <p className={styles.footerInfoTitle}>
+              Saber más
+            </p>
+          </Link>
+          <Link href='/about'>
+            <p className={styles.text}>Sobre Minka</p>
+          </Link>
+          <Link href='/team'>
+            <p className={styles.text}>Equipo</p>
+          </Link>
+          <Link href='/condiciones'>
+            <p className={styles.text}>
+              Condiciones generales
+            </p>
+          </Link>
+          <Link href='/security'>
+            <p className={styles.text}>Confidencialidad</p>
+          </Link>
         </div>
         <div>
-          <p className={styles.footerInfoTitle}>
-            Funciones
-          </p>
-          <p className={styles.text}>Recaudar fondos</p>
-          <p className={styles.text}>Donar</p>
+          <Link href='/funciones'>
+            <p className={styles.footerInfoTitle}>
+              Funciones
+            </p>
+          </Link>
+          <Link href='/login'>
+            <p className={styles.text}>Recaudar fondos</p>
+          </Link>
+          <Link href='/donar'>
+            <p className={styles.text}>Donar</p>
+          </Link>
         </div>
         <div>
-          <p className={styles.footerInfoTitle}>
-            Recursos y apoyo
-          </p>
-          <p className={styles.text}>FAQ</p>
-          <p className={styles.text}>
-            Guía de recaudación de fondos
-          </p>
-          <p className={styles.text}>
-            Red de socios para kermes y rifas
-          </p>
-          <p className={styles.text}>Testimonios</p>
+          <Link href='/recursos'>
+            <p className={styles.footerInfoTitle}>
+              Recursos y apoyo
+            </p>
+          </Link>
+          <Link href='#faq'>
+            <p className={styles.text}>FAQ</p>
+          </Link>
+          <Link href='/guia'>
+            <p className={styles.text}>
+              Guía de recaudación de fondos
+            </p>
+          </Link>
+          <Link href='/red'>
+            <p className={styles.text}>
+              Red de socios para kermes y rifas
+            </p>
+          </Link>
+          <Link href='#testimonios'>
+            <p className={styles.text}>Testimonios</p>
+          </Link>
         </div>
       </div>
       <p className={styles.footerCopy}>

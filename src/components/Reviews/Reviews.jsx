@@ -3,10 +3,11 @@ import styles from './Reviews.module.scss'
 import woman from '../../../public/woman.png'
 import woman2 from '../../../public/woman2.png'
 import man from '../../../public/man.png'
+import Link from 'next/link'
 
 export default function Reviews() {
   return (
-    <div className={styles.reviews}>
+    <div className={styles.reviews} id='testimonios'>
       <p className={styles.textAlt}>Testimonios</p>
       <h2 className={styles.headingSec}>
         Qué opinan los usuarios
@@ -65,7 +66,7 @@ export default function Reviews() {
         </div>
       </div>
       <button className={styles.buttonPrimary}>
-        Empieza
+        <Link href='/login'>Empieza</Link>
       </button>
     </div>
   )

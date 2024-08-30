@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import styles from './Hero.module.scss'
 import img from '../../../public/child.png'
+import Link from 'next/link'
 
 export default function Hero() {
   return (
@@ -16,10 +17,10 @@ export default function Hero() {
           en Bolivia.
         </p>
         <button className={styles.buttonPrimary}>
-          Recaudar fondos
+          <Link href='/login'>Recaudar fondos</Link>
         </button>
         <button className={styles.buttonSecondary}>
-          Donar
+          <Link href='/donar'>Donar</Link>
         </button>
       </div>
       <div className={styles.heroImg}>

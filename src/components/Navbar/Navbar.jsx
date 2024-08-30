@@ -85,13 +85,13 @@ const Navbar = () => {
               <Link href='/donar'>Donar</Link>
             </li>
             <li className={styles.li}>
-              <Link href='/recaudarfondos'>
+              <Link href='/login'>
                 Recaudar fondos
               </Link>
             </li>
             <li className={styles.li}>
               <Link
-                href='#footer'
+                href='/login'
                 className={styles.buttonWhite}
               >
                 Iniciar una campaña

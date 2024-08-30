@@ -35,6 +35,12 @@
         & .li {
           position: relative;
 
+          & a {
+            &:hover:not(:has(img)) {
+              border-bottom: 1px solid $white-color;
+            }
+          }
+
           & ul {
             @extend .text;
             cursor: pointer;
@@ -48,9 +54,10 @@
             list-style: none;
 
             &>a {
-              display: block;width: auto;
+              display: block;
+              width: auto;
 
-              &:hover{
+              &:hover {
                 border-bottom: 1px white dashed;
               }
             }
@@ -60,10 +67,17 @@
 
       & a,
       & p {
-        color: $white-color;
         font-size: $font-size-md;
         margin: 0;
         cursor: pointer;
+      }
+
+      & p {
+        color: $white-color;
+
+        &:hover {
+          border-bottom: 1px solid $white-color;
+        }
       }
     }
   }

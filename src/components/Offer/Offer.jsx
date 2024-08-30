@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Icon from '../Icon/Icon'
 import styles from './Offer.module.scss'
 
@@ -61,7 +62,7 @@ export default function Offer() {
       </div>
 
       <button className={styles.buttonPrimary}>
-        Saber más
+        <Link href='/saber'>Saber más</Link>
       </button>
     </div>
   )

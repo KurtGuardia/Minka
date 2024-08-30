@@ -37,6 +37,10 @@
 
 .buttonSecondary {
     @include button-style($white-color, $cta-color, true);
+
+    &>* {
+        color: $cta-color !important;
+    }
 }
 
 .buttonWhite {
