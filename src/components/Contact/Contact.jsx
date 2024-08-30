@@ -2,7 +2,7 @@ import styles from './Contact.module.scss'
 
 export default function Contact() {
   return (
-    <div className={styles.contact}>
+    <div className={styles.contact} id='contact'>
       <p className={styles.contactQuestion}>
         ¿Todavía tienes dudas?
       </p>

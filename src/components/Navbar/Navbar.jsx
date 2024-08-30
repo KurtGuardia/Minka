@@ -5,9 +5,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from './Navbar.module.scss'
 import logo from '../../../public/logo-white.svg'
+// import chevron from '../../../public/icons/chevron.svg'
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false)
+  const [displayAbout, setDisplayAbout] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,7 +32,13 @@ const Navbar = () => {
       }`}
     >
       <div className={styles.container}>
-        <Link href='/'>
+        <Link href='/'
+          onClick={(e) => {
+            e.preventDefault()
+            document
+              .getElementById('top')
+              .scrollIntoView({ behavior: 'smooth' })
+          }}>
           <Image
             src={logo}
             alt='Minka Logo'
@@ -41,19 +49,43 @@ const Navbar = () => {
         <nav className={styles.nav}>
           <ul className={styles.ul}>
             <li className={styles.li}>
-              <Link href='/recaudarfondos'>
-                Recaudar fondos
-              </Link>
+              <div
+                className={styles.about}
+                onClick={() =>
+                  setDisplayAbout(!displayAbout)
+                }
+              >
+                <p>Acerca de</p>
+                {/* <Image
+                src={chevron}
+                alt='dropdown'
+                width={10}
+              /> */}
+                <ul
+                  style={{
+                    display: displayAbout ? 'block' : 'none',
+                  }}
+                >
+                  <Link href='#'>Nosotros</Link>
+                  <Link href='#faq'>FAQ</Link>
+                  <Link href='#contact'>Contáctanos</Link>
+                </ul>
+              </div>
             </li>
             <li className={styles.li}>
               <Link href='/donar'>Donar</Link>
+            </li>
+            <li className={styles.li}>
+              <Link href='/recaudarfondos'>
+                Recaudar fondos
+              </Link>
             </li>
             <li className={styles.li}>
               <Link
                 href='#footer'
                 className={styles.buttonWhite}
               >
-                Ingresar
+                Iniciar una campaña
               </Link>
             </li>
           </ul>

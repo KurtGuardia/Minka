@@ -188,7 +188,7 @@ const faqsSecurity = [
 
 export default function FAQ() {
   return (
-    <div className={styles.faq}>
+    <div className={styles.faq} id='faq'>
       <p className={styles.textAlt}>F.A.Q.</p>
       <h2 className={styles.headingSec}>
         ¿Tienes preguntas?

@@ -41,7 +41,7 @@
 
 .buttonWhite {
     @include button-style($white-color, $primary-color);
-    text-transform: capitalize;
+    text-transform: none;
 }
 
 .buttonPrimary,
