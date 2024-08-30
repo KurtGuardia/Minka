@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './Navbar.module.scss'
+import logo from '../../../public/logo-white.svg'
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false)
@@ -31,7 +32,7 @@ const Navbar = () => {
       <div className={styles.container}>
         <Link href='/'>
           <Image
-            src='/logo.svg'
+            src={logo}
             alt='Minka Logo'
             width={150}
             height={50}
@@ -49,7 +50,7 @@ const Navbar = () => {
             </li>
             <li className={styles.li}>
               <Link
-                href='/ingresar'
+                href='#footer'
                 className={styles.buttonWhite}
               >
                 Ingresar

@@ -7,6 +7,7 @@
 
 
 // Define global styles
+
 $rem-base: 10px;
 
 .html,
@@ -26,7 +27,7 @@ $rem-base: 10px;
       margin: 1.5rem 0;
     }
 
-    p{
+    p {
       margin: 0
     }
   }
@@ -40,6 +41,24 @@ $rem-base: 10px;
     &:hover:not(:has(img)) {
       border-bottom: 1px solid $white-color;
     }
+  }
+
+  ::-webkit-scrollbar {
+    width: 1rem;
+
+    &-thumb {
+      background-color: $secondary-color;
+      border-radius: 10px;
+    }
+
+    &-track {
+      background-color: $primary-color;
+    }
+  }
+
+  ::selection {
+    background-color: $tertiary-color;
+    color: $cta-color;
   }
 }
 

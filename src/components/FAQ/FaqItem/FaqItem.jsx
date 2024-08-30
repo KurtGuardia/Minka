@@ -23,13 +23,12 @@ const FaqItem = ({ question, answer }) => {
           src={chev}
           alt='icono dropdown'
           width={15}
-          className={isOpen && styles.open}
+          className={isOpen ? styles.open : undefined}
         />
       </h3>
       {isOpen && (
         <div
           className={styles.faqAnswer}
-          onClick={toggleAnswer}
         >
           {answer}
         </div>

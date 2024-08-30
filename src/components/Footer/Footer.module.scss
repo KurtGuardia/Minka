@@ -1,0 +1,51 @@
+.footer {
+    @include flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: $secondary-color-transparent;
+    padding: 3rem;
+    border-bottom: 1.5rem $primary-color solid;
+    margin: 0 -15rem;
+
+    &>div {
+        flex-grow: 1;
+        flex-shrink: 0;
+    }
+
+    &Icons {
+        @include flex-column;
+        align-items: center;
+
+        &Social {
+            @include flex;
+            gap: 1rem !important;
+        }
+    }
+
+    &Info {
+        @include flex;
+
+        &Title {
+            @extend .text;
+            font-weight: bold;
+            margin-bottom: 2rem !important;
+        }
+    }
+
+    &Copy {
+        @extend .text;
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: 100%;
+        text-align: center;
+
+        & a {
+            color: $secondary-color;
+
+            &:hover {
+                color: $cta-color;
+                border-bottom: none !important;
+            }
+        }
+    }
+}
