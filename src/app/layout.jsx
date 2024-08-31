@@ -1,5 +1,6 @@
 import styles from './page.module.scss'
 import Navbar from '../components/Navbar/Navbar'
+import Footer from '@/components/Footer/Footer'
 
 export const metadata = {
   title: 'Minka: Ayudando Bolivia',
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
       </body>
+      <Footer />
     </html>
   )
 }

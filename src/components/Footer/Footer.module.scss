@@ -1,4 +1,9 @@
 .footer {
+    // Until it is responsive
+    @media (max-width: 1280px) {
+      display: none;
+    }
+
     @include flex;
     justify-content: space-around;
     flex-wrap: wrap;

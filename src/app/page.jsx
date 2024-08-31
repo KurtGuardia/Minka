@@ -9,12 +9,17 @@ import Footer from '@/components/Footer/Footer'
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Hero />
-      <Offer />
-      <Reviews />
-      <FAQ />
-      <Contact/>
-      <Footer/>
+      <h1 className={styles.heading}>
+        NOT YET RESPONSIVE. Check it out on desktop, thank
+        you.
+      </h1>
+      <div className={styles.mainContent}>
+        <Hero />
+        <Offer />
+        <Reviews />
+        <FAQ />
+        <Contact />
+      </div>
     </main>
   )
 }
