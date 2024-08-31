@@ -10,10 +10,32 @@ import Link from 'next/link'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 export default function Footer() {
+  const date = () => {
+    const date = new Date()
+    const year = date.getFullYear()
+    const month = date.getMonth()
+    const monthNames = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+    ]
+
+    return `${monthNames[month]}/${year}`
+  }
+
   return (
     <div className={styles.footer} id='footer'>
       <div className={styles.footerIcons}>
-        <AnchorLink href='#top'>
+        <AnchorLink offset={150} href='#top'>
           <Image
             src={logo}
             alt='Minka Logo'
@@ -98,7 +120,7 @@ export default function Footer() {
               Recursos y apoyo
             </p>
           </Link>
-          <AnchorLink href='#faq'>
+          <AnchorLink offset={150} href='#faq'>
             <p className={styles.text}>FAQ</p>
           </AnchorLink>
           <Link href='/guia'>
@@ -111,7 +133,7 @@ export default function Footer() {
               Red de socios para kermes y rifas
             </p>
           </Link>
-          <AnchorLink href='#testimonios'>
+          <AnchorLink offset={150} href='#testimonios'>
             <p className={styles.text}>Testimonios</p>
           </AnchorLink>
         </div>
@@ -124,8 +146,8 @@ export default function Footer() {
           rel='noreferrer'
         >
           Kurt Guardia
-        </a>
-        · Copyright &copy;
+        </a> - update: {date()}
+         {' '}· Copyright &reg;
       </p>
     </div>
   )
