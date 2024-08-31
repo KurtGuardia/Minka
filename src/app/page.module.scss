@@ -1,13 +1,13 @@
 .main {
-    // Until it is responsive
-    padding: 5rem !important;
 
     h2 {
         display: none;
         text-align: center;
 
+        // Until it is responsive
         @media (max-width: $tablet) {
             display: block;
+            padding: 5rem !important;
         }
     }
 
