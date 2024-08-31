@@ -1,11 +1,11 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 import styles from './Navbar.module.scss'
 import logo from '../../../public/logo-white.svg'
 import { useOutsideClick } from '@/hooks/useOutsideClick'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false)
@@ -41,14 +41,8 @@ const Navbar = () => {
       }`}
     >
       <div className={styles.container}>
-        <Link
-          href='/'
-          onClick={(e) => {
-            e.preventDefault()
-            document
-              .getElementById('top')
-              .scrollIntoView({ behavior: 'smooth' })
-          }}
+        <AnchorLink offset={150}
+          href='#top'
         >
           <Image
             src={logo}
@@ -56,7 +50,7 @@ const Navbar = () => {
             width={150}
             height={50}
           />
-        </Link>
+        </AnchorLink>
         <nav className={styles.nav}>
           <ul className={styles.ul}>
             <li className={styles.li}>
@@ -75,27 +69,27 @@ const Navbar = () => {
                   }}
                   ref={ref}
                 >
-                  <Link href='#'>Nosotros</Link>
-                  <Link href='#faq'>FAQ</Link>
-                  <Link href='#contact'>Contáctanos</Link>
+                  <AnchorLink offset={150} href='#'>Nosotros</AnchorLink>
+                  <AnchorLink offset={150} href='#faq'>FAQ</AnchorLink>
+                  <AnchorLink offset={150} href='#contact'>Contáctanos</AnchorLink>
                 </ul>
               </div>
             </li>
             <li className={styles.li}>
-              <Link href='/donar'>Donar</Link>
+              <AnchorLink offset={150} href='/donar'>Donar</AnchorLink>
             </li>
             <li className={styles.li}>
-              <Link href='/login'>
+              <AnchorLink offset={150} href='/login'>
                 Recaudar fondos
-              </Link>
+              </AnchorLink>
             </li>
             <li className={styles.li}>
-              <Link
+              <AnchorLink offset={150}
                 href='/login'
                 className={styles.buttonWhite}
               >
                 Iniciar una campaña
-              </Link>
+              </AnchorLink>
             </li>
           </ul>
         </nav>

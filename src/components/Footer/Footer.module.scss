@@ -1,6 +1,6 @@
 .footer {
     // Until it is responsive
-    @media (max-width: 1280px) {
+    @media (max-width: $tablet) {
       display: none;
     }
 

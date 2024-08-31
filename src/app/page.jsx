@@ -8,10 +8,10 @@ import Contact from '@/components/Contact/Contact'
 export default function Home() {
   return (
     <main className={styles.main}>
-      <h1 className={styles.headingSec}>
+      <h2 className={styles.headingSec}>
         NOT YET RESPONSIVE. Check it out on desktop, thank
         you.
-      </h1>
+      </h2>
       <div className={styles.mainContent}>
         <Hero />
         <Offer />

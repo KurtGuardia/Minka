@@ -7,27 +7,20 @@ import facebook from '../../../public/icons/facebook.svg'
 import instagram from '../../../public/icons/instagram.svg'
 import whatsapp from '../../../public/icons/whatsapp.svg'
 import Link from 'next/link'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 export default function Footer() {
   return (
     <div className={styles.footer} id='footer'>
       <div className={styles.footerIcons}>
-        <Link
-          href='#'
-          onClick={(e) => {
-            e.preventDefault()
-            document
-              .getElementById('top')
-              .scrollIntoView({ behavior: 'smooth' })
-          }}
-        >
+        <AnchorLink href='#top'>
           <Image
             src={logo}
             alt='Minka Logo'
             width={150}
             height={50}
           />
-        </Link>
+        </AnchorLink>
         <div className={styles.footerIconsSocial}>
           <a
             target='_blank'
@@ -105,9 +98,9 @@ export default function Footer() {
               Recursos y apoyo
             </p>
           </Link>
-          <Link href='#faq'>
+          <AnchorLink href='#faq'>
             <p className={styles.text}>FAQ</p>
-          </Link>
+          </AnchorLink>
           <Link href='/guia'>
             <p className={styles.text}>
               Guía de recaudación de fondos
@@ -118,15 +111,21 @@ export default function Footer() {
               Red de socios para kermes y rifas
             </p>
           </Link>
-          <Link href='#testimonios'>
+          <AnchorLink href='#testimonios'>
             <p className={styles.text}>Testimonios</p>
-          </Link>
+          </AnchorLink>
         </div>
       </div>
       <p className={styles.footerCopy}>
         App developed by{' '}
-        <a href='https://kurtguardia.com'>Kurt Guardia</a> ·
-        Copyright &copy;
+        <a
+          href='https://kurtguardia.com'
+          target='_blank'
+          rel='noreferrer'
+        >
+          Kurt Guardia
+        </a>
+        · Copyright &copy;
       </p>
     </div>
   )
