@@ -9,15 +9,16 @@ export default function Contact() {
       <p className={styles.contactText}>
         Póngase en contacto con nostros.
       </p>
-      <button className={styles.buttonPrimary}>
-        <a
-          href='mailto:kurtguardia@gmail.com?subject=Great%20website!&body=Love%20the%20landing%20page!!%20'
-          target='_blank'
-          rel='noreferrer'
-        >
+
+      <a
+        href='mailto:kurtguardia@gmail.com?subject=Great%20website!&body=Love%20the%20landing%20page!!%20'
+        target='_blank'
+        rel='noreferrer'
+      >
+        <button className={styles.buttonPrimary}>
           Contact
-        </a>
-      </button>
+        </button>
+      </a>
     </div>
   )
 }

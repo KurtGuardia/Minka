@@ -61,9 +61,11 @@ export default function Offer() {
         </div>
       </div>
 
-      <button className={styles.buttonPrimary}>
-        <Link href='/saber'>Saber más</Link>
-      </button>
+      <Link href='/saber'>
+        <button className={styles.buttonPrimary}>
+          Saber más
+        </button>
+      </Link>
     </div>
   )
 }

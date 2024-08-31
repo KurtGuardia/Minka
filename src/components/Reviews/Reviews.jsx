@@ -65,9 +65,11 @@ export default function Reviews() {
           </p>
         </div>
       </div>
-      <button className={styles.buttonPrimary}>
-        <Link href='/login'>Empieza</Link>
-      </button>
+      <Link href='/login'>
+        <button className={styles.buttonPrimary}>
+          Empieza
+        </button>
+      </Link>
     </div>
   )
 }

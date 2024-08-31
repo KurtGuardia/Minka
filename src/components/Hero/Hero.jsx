@@ -16,12 +16,16 @@ export default function Hero() {
           Con la primera plataforma de donaciones enfocada
           en Bolivia.
         </p>
-        <button className={styles.buttonPrimary}>
-          <Link href='/login'>Recaudar fondos</Link>
-        </button>
-        <button className={styles.buttonSecondary}>
-          <Link href='/donar'>Donar</Link>
-        </button>
+        <Link href='/login'>
+          <button className={styles.buttonPrimary}>
+            Recaudar fondos
+          </button>
+        </Link>
+        <Link href='/donar'>
+          <button className={styles.buttonSecondary}>
+            Donar
+          </button>
+        </Link>
       </div>
       <div className={styles.heroImg}>
         <Image

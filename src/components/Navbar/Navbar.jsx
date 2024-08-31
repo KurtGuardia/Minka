@@ -6,6 +6,7 @@ import styles from './Navbar.module.scss'
 import logo from '../../../public/logo-white.svg'
 import { useOutsideClick } from '@/hooks/useOutsideClick'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import Link from 'next/link'
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false)
@@ -76,20 +77,20 @@ const Navbar = () => {
               </div>
             </li>
             <li className={styles.li}>
-              <AnchorLink offset={150} href='/donar'>Donar</AnchorLink>
+              <Link offset={150} href='/donar'>Donar</Link>
             </li>
             <li className={styles.li}>
-              <AnchorLink offset={150} href='/login'>
+              <Link offset={150} href='/login'>
                 Recaudar fondos
-              </AnchorLink>
+              </Link>
             </li>
             <li className={styles.li}>
-              <AnchorLink offset={150}
+              <Link offset={150}
                 href='/login'
                 className={styles.buttonWhite}
               >
                 Iniciar una campaña
-              </AnchorLink>
+              </Link>
             </li>
           </ul>
         </nav>
