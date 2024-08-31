@@ -1,4 +1,5 @@
 .navbar {
+
   // Until it is responsive
   @media (max-width: 1280px) {
     display: none;
@@ -79,6 +80,7 @@
 
       & p {
         color: $white-color;
+        border-bottom: 1px solid transparent;
 
         &:hover {
           border-bottom: 1px solid $white-color;
