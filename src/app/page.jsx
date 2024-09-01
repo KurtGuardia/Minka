@@ -8,7 +8,7 @@ import Contact from '@/components/Contact/Contact'
 export default function Home() {
   return (
     <main className={styles.main}>
-      <h2 className={styles.headingSec}>
+      <h2 className={styles.notResponsive}>
         NOT YET RESPONSIVE. Check it out on desktop, thank
         you.
       </h2>

@@ -1,13 +1,17 @@
 .main {
+    // Until it is responsive
+    @media (max-width: $tablet) {
+        padding: 3.5rem !important;
+    }
 
-    h2 {
+    .notResponsive {
+        @extend .headingSec;
         display: none;
         text-align: center;
 
         // Until it is responsive
         @media (max-width: $tablet) {
             display: block;
-            padding: 5rem !important;
         }
     }
 
