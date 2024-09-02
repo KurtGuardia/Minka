@@ -2,7 +2,11 @@
 
     &Top {
         margin: auto;
-        margin-top: 8rem;
+        margin-top: 21rem;
+
+        & h1{
+            margin-bottom: 2rem;
+        }
 
         &Text {
             width: 60%;
@@ -19,7 +23,7 @@
         position: relative;
         aspect-ratio: 1440 / 697;
         padding: 0;
-        margin: 10rem -15rem;
+        margin: 15rem -15rem;
 
         & img {
             filter: grayscale(100%);

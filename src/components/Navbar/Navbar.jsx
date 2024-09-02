@@ -8,30 +8,8 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Link from 'next/link'
 
 const Navbar = () => {
-  const [isSticky, setIsSticky] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const viewportHeight = window.innerHeight
-      if (window.scrollY > viewportHeight * 1.5) {
-        setIsSticky(true)
-      } else {
-        setIsSticky(false)
-      }
-    }
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
-
   return (
-    <header
-      className={`${styles.navbar} ${
-        isSticky ? styles.sticky : ''
-      }`}
-    >
+    <header className={styles.navbar}>
       <div className={styles.container}>
         <AnchorLink offset={150} href='#top'>
           <Image
@@ -44,12 +22,9 @@ const Navbar = () => {
         <nav className={styles.nav}>
           <ul className={styles.ul}>
             <li className={styles.li}>
-              <div
-                className={styles.about}
-              />
+              <div className={styles.about} />
               <p>Acerca de &nbsp; &darr;</p>
-              <ul
-              >
+              <ul>
                 <AnchorLink offset={150} href='#'>
                   Nosotros
                 </AnchorLink>
