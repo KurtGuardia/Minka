@@ -43,13 +43,7 @@
     }
 }
 
-.buttonWhite {
-    @include button-style($white-color, $primary-color);
-    text-transform: none;
-}
-
 .buttonPrimary,
-.buttonSecondary,
-.buttonWhite {
+.buttonSecondary {
     font-size: 16px;
 }

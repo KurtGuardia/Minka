@@ -75,7 +75,7 @@ const Navbar = () => {
               <Link
                 offset={150}
                 href='/login'
-                className={styles.buttonWhite}
+                className={styles.button}
               >
                 Iniciar una campaña
               </Link>

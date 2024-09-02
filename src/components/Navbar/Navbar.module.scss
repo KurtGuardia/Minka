@@ -41,10 +41,27 @@
         & .li {
           position: relative;
 
+          & .button {
+            background-color: $white-color;
+            color: $primary-color !important;
+            text-transform: none;
+            display: block;
+            padding: .7rem 2rem;
+            border-radius: $border-radius;
+            border: none;
+            cursor: pointer;
+            transition: all .5s ease;
+
+            &:hover {
+              font-weight: bold;
+            }
+          }
+
           & a,
           & p {
             cursor: pointer;
             font-size: $font-size-md;
+            font-weight: 400;
             color: $white-color;
             margin: 0;
             transition: all .5s ease;
@@ -86,7 +103,7 @@
             border-bottom-left-radius: 0.5rem;
             list-style: none;
 
-            &:hover{
+            &:hover {
               display: block;
             }
 
