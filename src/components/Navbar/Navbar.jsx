@@ -26,12 +26,10 @@ const Navbar = () => {
               <div className={styles.about} />
               <p>
                 Acerca de
-                <span>
                   <Icon
                     iconName='chevron-white'
                     size={15}
                   />
-                </span>
               </p>
               <ul>
                 <AnchorLink offset={150} href='#'>

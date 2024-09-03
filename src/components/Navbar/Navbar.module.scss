@@ -48,7 +48,6 @@
               font-weight: bold;
 
               & img {
-
                 transform: rotate(-180deg);
               }
             }
@@ -60,6 +59,8 @@
           }
 
           & .button {
+            cursor: pointer;
+            width: max-content;
             background-color: $white-color;
             color: $primary-color !important;
             text-transform: none;
@@ -67,7 +68,6 @@
             padding: .7rem 2rem;
             border-radius: $border-radius;
             border: none;
-            cursor: pointer;
             transition: all .5s ease;
 
             &:hover {
@@ -78,7 +78,7 @@
           & p {
             @include flex;
             align-items: center;
-            gap: 1rem;
+            gap: 2rem !important;
             cursor: pointer;
             font-size: $font-size-md;
             font-weight: 400;
@@ -107,7 +107,7 @@
             background-color: $secondary-color;
             position: absolute;
             top: 190%;
-            left: 20%;
+            left: 0;
             padding: 1rem 2rem;
             border-bottom-right-radius: 0.5rem;
             border-bottom-left-radius: 0.5rem;
