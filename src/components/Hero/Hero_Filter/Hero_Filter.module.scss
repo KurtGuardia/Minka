@@ -1,0 +1,52 @@
+.heroFilter {
+    position: relative;
+    width: fit-content;
+
+    &Current {
+        @extend .text;
+        @include flex;
+        cursor: pointer;
+        align-items: center;
+        gap: 0;
+        justify-content: space-between;
+        width: 12rem;
+        height: 3rem;
+        padding: 0 10px;
+        background-color: $white-color;
+        border: 1px solid $black-color;
+        border-radius: $border-radius;
+        position: relative;
+        font-weight: bold;
+
+        &:hover+div {
+            display: block;
+        }
+    }
+
+    &Options {
+        @extend .text;
+        display: none;
+        position: absolute;
+        border-radius: 10px;
+        top: 100%;
+        padding: 1rem;
+        left: 1%;
+        width: 80%;
+        background-color: rgba($tertiary-color, 0.5);
+        filter: blur(.5px);
+        z-index: 10;
+
+        &:hover {
+            display: block;
+        }
+
+        &Each {
+            cursor: pointer;
+            margin: .5rem 0 !important;
+
+            &:hover {
+                font-weight: bold;
+            }
+        }
+    }
+}

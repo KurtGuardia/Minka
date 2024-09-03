@@ -7,11 +7,13 @@ export default function Hero_Card({
   target,
   raised,
   image,
+  query
 }) {
   const raisedWidth = (raised * 100) / target
 
   return (
     <div className={styles.card}>
+      <span className={styles.cardTag}>{query}</span>
       <Image
         src={image}
         className={styles.cardImage}

@@ -1,7 +1,11 @@
+'use client'
+
 import styles from './Hero.module.scss'
 import Link from 'next/link'
 import img from '../../../public/dog.png'
 import Hero_Card from './Hero_Card/Hero_Card'
+import Hero_Filter from './Hero_Filter/Hero_Filter'
+import { useState } from 'react'
 
 const dummyData = [
   {
@@ -11,6 +15,7 @@ const dummyData = [
     image: img,
     target: 3000,
     raised: 2500,
+    query: 'Cercanas',
   },
   {
     id: 2,
@@ -19,6 +24,7 @@ const dummyData = [
     image: img,
     target: 3000,
     raised: 2500,
+    query: 'Últimas',
   },
   {
     id: 3,
@@ -27,10 +33,14 @@ const dummyData = [
     image: img,
     target: 3000,
     raised: 2500,
+    query: 'Antiguas',
   },
 ]
 
 export default function Hero() {
+  const [query, setQuery] = useState('')
+  const filteredData = dummyData.filter((each) => each.query === query)
+
   return (
     <div className={`section ${styles.hero}`} id='top'>
       <div className={styles.heroTop}>
@@ -54,10 +64,10 @@ export default function Hero() {
           </button>
         </Link>
       </div>
+      <Hero_Filter options={dummyData.map(item => item.query)} current={query} setQuery={setQuery}/>
       <div className={styles.heroShowcase}>
-        {/* filter */}
         {dummyData.map((card) => (
-          <Hero_Card {...card} key={card.id}/>
+          <Hero_Card {...card} key={card.id} />
         ))}
       </div>
     </div>

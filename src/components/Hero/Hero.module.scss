@@ -1,10 +1,10 @@
 .hero {
+    margin-bottom: 15rem;
 
     &Top {
-        margin: auto;
-        margin-top: 21rem;
+        margin: 21rem auto 15rem;
 
-        & h1{
+        & h1 {
             margin-bottom: 2rem;
         }
 
@@ -13,13 +13,13 @@
         }
 
         & button {
-            margin: 20px;
+            margin: 2rem;
             margin-left: 0;
         }
     }
 
-    &Showcase{
+    &Showcase {
         @include flex;
-        margin: 15rem auto;
+        margin: 5rem auto;
     }
 }
