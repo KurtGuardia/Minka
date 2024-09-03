@@ -1,0 +1,38 @@
+$progress-bar-height: 7px;
+
+.card {
+    & img {
+        border-radius: $border-radius;
+        width: 100%;
+        height: auto;
+    }
+
+    &Title {
+        @extend .textAlt;
+        font-size: 32px;
+        letter-spacing: 0;
+        text-transform: none;
+        line-height: 100%;
+    }
+
+    &Text {
+        @extend .text;
+        font-size: $font-size-lg;
+    }
+
+    &ProgressBar {
+        position: relative;
+        margin: 2rem 0;
+        width: 100%;
+        height: $progress-bar-height;
+        border-radius: $border-radius;
+        background-color: $secondary-color-transparent;
+
+        &Raised {
+            position: absolute;
+            background-color: $secondary-color;
+            height: $progress-bar-height;
+            border-radius: $border-radius;
+        }
+    }
+}

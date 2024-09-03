@@ -1,7 +1,34 @@
-import Image from 'next/image'
 import styles from './Hero.module.scss'
-import img from '../../../public/child.png'
 import Link from 'next/link'
+import img from '../../../public/dog.png'
+import Hero_Card from './Hero_Card/Hero_Card'
+
+const dummyData = [
+  {
+    id: 1,
+    title: 'Aligned with City, finishes with the same',
+    by: 'por Aid-seeker para Beneficiario',
+    image: img,
+    target: 2500,
+    raised: 1000,
+  },
+  {
+    id: 2,
+    title: 'Aligned with City, finishes with the same',
+    by: 'por Aid-seeker para Beneficiario',
+    image: img,
+    target: 2500,
+    raised: 1000,
+  },
+  {
+    id: 3,
+    title: 'Aligned with City, finishes with the same',
+    by: 'por Aid-seeker para Beneficiario',
+    image: img,
+    target: 2500,
+    raised: 1000,
+  },
+]
 
 export default function Hero() {
   return (
@@ -27,16 +54,11 @@ export default function Hero() {
           </button>
         </Link>
       </div>
-      <div className={styles.heroImg}>
-        <Image
-          src={img}
-          alt='Una niña boliviana buscando ayuda para su educación'
-          fill
-          sizes='(max-width: 640px) 100vw,
-            (max-width: 1280px) 100vw,
-            100vw'
-          style={{ objectFit: 'cover' }}
-        />
+      <div className={styles.heroShowcase}>
+        {/* filter */}
+        {dummyData.map((card) => (
+          <Hero_Card {...card} key={card.id}/>
+        ))}
       </div>
     </div>
   )

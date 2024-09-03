@@ -18,15 +18,8 @@
         }
     }
 
-    &Img {
-        overflow: hidden;
-        position: relative;
-        aspect-ratio: 1440 / 697;
-        padding: 0;
-        margin: 15rem -15rem;
-
-        & img {
-            filter: grayscale(100%);
-        }
+    &Showcase{
+        @include flex;
+        margin: 15rem auto;
     }
 }
