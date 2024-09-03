@@ -1,13 +1,16 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styles from './Navbar.module.scss'
 import logo from '../../../public/logo-white.svg'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Link from 'next/link'
+import Icon from '../Icon/Icon'
+import { useState } from 'react'
 
 const Navbar = () => {
+  const [isHover, setIsHover] = useState(false)
+
   return (
     <header className={styles.navbar}>
       <div className={styles.container}>
@@ -20,10 +23,27 @@ const Navbar = () => {
           />
         </AnchorLink>
         <nav className={styles.nav}>
-          <ul className={styles.ul}>
+          <ul
+            className={styles.ul}
+            onMouseEnter={() => {
+              console.log('YES')
+              setIsHover(true)
+            }}
+          >
             <li className={styles.li}>
               <div className={styles.about} />
-              <p>Acerca de &nbsp; &darr;</p>
+              <p>
+                Acerca de{' '}
+                <span
+                >
+                  {' '}
+                  <Icon
+                  className={isHover ? styles.rotate : ''}
+                    iconName='chevron-white'
+                    size={15}
+                  />
+                </span>
+              </p>
               <ul>
                 <AnchorLink offset={150} href='#'>
                   Nosotros

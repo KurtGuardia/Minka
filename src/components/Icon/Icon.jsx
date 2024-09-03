@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-const Icon = ({ iconName, size }) => {
+const Icon = ({ iconName, size, className }) => {
   const iconUrl = `/icons/${iconName}.svg`
 
   return (
@@ -9,6 +9,7 @@ const Icon = ({ iconName, size }) => {
       alt={iconName}
       width={size}
       height={size}
+      className={className}
     />
   )
 }
