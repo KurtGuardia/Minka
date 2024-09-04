@@ -61,7 +61,7 @@ export default function Offer() {
         </div>
       </div>
 
-      <Link href='/saber'>
+      <Link href='/faq'>
         <button className={styles.buttonPrimary}>
           Saber más
         </button>

@@ -22,14 +22,14 @@ $rem-base: 10px;
 
   & main {
     overflow: hidden;
-    padding: 0 3rem;
+    padding: 6rem 3rem;
 
     @include laptop {
-      padding: 0 10rem;
+      padding: 6rem 10rem;
     }
 
     @include desktop {
-      padding: 0 15rem;
+      padding: 6rem 15rem;
     }
 
     & h2 {
