@@ -15,8 +15,8 @@ const dummyData = [
     title: 'Aligned with City, finishes with the same',
     by: 'por Aid-seeker para Beneficiario',
     image: imgDog,
-    target: 3000,
-    raised: 2500,
+    target: 5000,
+    raised: 3000,
     query: 'Cercanas',
   },
   {
@@ -33,8 +33,8 @@ const dummyData = [
     title: 'Aligned with City, finishes with the same',
     by: 'por Aid-seeker para Beneficiario',
     image: imgChild,
-    target: 3000,
-    raised: 2500,
+    target: 1000,
+    raised: 350,
     query: 'Antiguas',
   },
 ]

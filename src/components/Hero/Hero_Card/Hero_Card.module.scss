@@ -1,10 +1,19 @@
 $progress-bar-height: 7px;
 
 .card {
+    cursor: pointer;
     width: 30%;
 
     &Top {
         position: relative;
+        overflow: hidden;
+        border-radius: $border-radius;
+
+        &:hover {
+            & img {
+                transform: scale(1)
+            }
+        }
     }
 
     &Tag {
@@ -12,10 +21,11 @@ $progress-bar-height: 7px;
         position: absolute;
         bottom: 10%;
         left: 5%;
-        background-color:rgba($primary-color, .65);
+        background-color: rgba($primary-color, .65);
         color: $white-color;
         padding: 5px 10px;
         border-radius: $border-radius;
+        z-index: 1;
     }
 
     & img {
@@ -23,6 +33,8 @@ $progress-bar-height: 7px;
         width: 100%;
         margin-bottom: 1rem;
         height: auto;
+        transform: scale(1.05);
+        transition: all .5s ease;
     }
 
     &Title {
