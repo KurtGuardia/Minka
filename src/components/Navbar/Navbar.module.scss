@@ -37,6 +37,9 @@
           width: 25%;
           text-align: center;
 
+          & a {
+            color: $white-color;
+          }
 
           &:hover {
             & a {

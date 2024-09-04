@@ -16,7 +16,7 @@ export default function Home() {
         <Hero />
         <Offer />
         <Reviews />
-        <FAQ />
+        <FAQ min={true} />
         <Contact />
       </div>
     </main>

@@ -5,4 +5,16 @@
         font-weight: bold;
         margin: 2rem 0 !important;
     }
+
+    &SeeMore {
+        @extend .text;
+        transition: all .5s ease;
+        color: $primary-color;
+
+        &:hover {
+            cursor: pointer;
+            color: $secondary-color;
+            letter-spacing: .25px;
+        }
+    }
 }

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import styles from './FAQ.module.scss'
 import FaqItem from './FaqItem/FaqItem'
 
@@ -186,7 +187,7 @@ const faqsSecurity = [
   },
 ]
 
-export default function FAQ() {
+export default function FAQ({ min = false }) {
   return (
     <div className={styles.faq} id='faq'>
       <p className={styles.textAlt}>F.A.Q.</p>
@@ -194,45 +195,135 @@ export default function FAQ() {
         ¿Tienes preguntas?
       </h2>
       <p className={styles.faqSubtitle}>General</p>
-      {faqsGeneral.map((faq, index) => (
-        <FaqItem
-          key={index}
-          question={faq.question}
-          answer={faq.answer}
-        />
-      ))}
-      <p className={styles.faqSubtitle}>Iniciar una campaña</p>
-      {faqsInit.map((faq, index) => (
-        <FaqItem
-          key={index}
-          question={faq.question}
-          answer={faq.answer}
-        />
-      ))}
+      {min === false
+        ? faqsGeneral
+            .slice(0, faqsGeneral.length)
+            .map((faq, index) => (
+              <FaqItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))
+        : faqsGeneral
+            .slice(0, 2)
+            .map((faq, index) => (
+              <FaqItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))}
+      {min && (
+        <Link href='/faq' className={styles.faqSeeMore}>
+          ... ver más preguntas
+        </Link>
+      )}
+      <p className={styles.faqSubtitle}>
+        Iniciar una campaña
+      </p>
+      {min === false
+        ? faqsInit
+            .slice(0, faqsInit.length)
+            .map((faq, index) => (
+              <FaqItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))
+        : faqsInit
+            .slice(0, 2)
+            .map((faq, index) => (
+              <FaqItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))}
+      {min && (
+        <Link href='/faq' className={styles.faqSeeMore}>
+          ... ver más preguntas
+        </Link>
+      )}
       <p className={styles.faqSubtitle}>Donaciones</p>
-      {faqsDonation.map((faq, index) => (
-        <FaqItem
-          key={index}
-          question={faq.question}
-          answer={faq.answer}
-        />
-      ))}
+      {min === false
+        ? faqsDonation
+            .slice(0, faqsDonation.length)
+            .map((faq, index) => (
+              <FaqItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))
+        : faqsDonation
+            .slice(0, 2)
+            .map((faq, index) => (
+              <FaqItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))}
+      {min && (
+        <Link href='/faq' className={styles.faqSeeMore}>
+          ... ver más preguntas
+        </Link>
+      )}
       <p className={styles.faqSubtitle}>Pagos y tasas</p>
-      {faqsPayment.map((faq, index) => (
-        <FaqItem
-          key={index}
-          question={faq.question}
-          answer={faq.answer}
-        />
-      ))}
-      <p className={styles.faqSubtitle}>Credibilidad y seguridad</p>
-      {faqsSecurity.map((faq, index) => (
-        <FaqItem
-          key={index}
-          question={faq.question}
-          answer={faq.answer}
-        />
-      ))}
+      {min === false
+        ? faqsPayment
+            .slice(0, faqsPayment.length)
+            .map((faq, index) => (
+              <FaqItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))
+        : faqsPayment
+            .slice(0, 2)
+            .map((faq, index) => (
+              <FaqItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))}
+      {min && (
+        <Link href='/faq' className={styles.faqSeeMore}>
+          ... ver más preguntas
+        </Link>
+      )}
+      <p className={styles.faqSubtitle}>
+        Credibilidad y seguridad
+      </p>
+      {min === false
+        ? faqsSecurity
+            .slice(0, faqsSecurity.length)
+            .map((faq, index) => (
+              <FaqItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))
+        : faqsSecurity
+            .slice(0, 2)
+            .map((faq, index) => (
+              <FaqItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))}
+
+      {min && (
+        <Link href='/faq' className={styles.faqSeeMore}>
+          ... ver más preguntas
+        </Link>
+      )}
     </div>
   )
 }
