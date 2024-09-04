@@ -16,7 +16,6 @@
 
   .container {
     @include flex;
-    gap: 15rem !important;
     justify-content: space-around;
     align-items: center;
     padding: 0 7rem;

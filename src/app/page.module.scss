@@ -1,8 +1,5 @@
 .main {
     // Until it is responsive
-    @media (max-width: $tablet) {
-        padding: 3.5rem !important;
-    }
 
     .notResponsive {
         @extend .headingSec;

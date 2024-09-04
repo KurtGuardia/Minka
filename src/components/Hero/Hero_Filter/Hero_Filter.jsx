@@ -9,21 +9,14 @@ export default function Hero_Filter({
   return (
     <div className={styles.heroFilter}>
       <p className={styles.heroFilterCurrent}>
-        {current || 'Todas'}
+        {current}
         <Icon iconName='chevron' size={15} />
       </p>
       <div className={styles.heroFilterOptions}>
-        <p
-          data-value={'Todas'}
-          className={styles.heroFilterOptionsEach}
-          onClick={() => setQuery('Todas')}
-        >
-          Todas
-        </p>
         {options.map((option) => (
           <p
             data-value={option}
-            className={styles.heroFilterOptionsEach}
+            className={`${styles.heroFilterOptionsEach} ${current === option ? styles.active : ''}`}
             key={option}
             onClick={() => setQuery(option)}
           >

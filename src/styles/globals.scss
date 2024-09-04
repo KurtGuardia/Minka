@@ -21,8 +21,16 @@ $rem-base: 10px;
   overflow-x: hidden;
 
   & main {
-    padding: 0 15rem;
     overflow: hidden;
+    padding: 0 3rem;
+
+    @include laptop {
+      padding: 0 10rem;
+    }
+
+    @include desktop {
+      padding: 0 15rem;
+    }
 
     & h2 {
       margin: 1.5rem 0;

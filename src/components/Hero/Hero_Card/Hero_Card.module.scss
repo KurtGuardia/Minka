@@ -1,14 +1,19 @@
 $progress-bar-height: 7px;
 
 .card {
-    position: relative;
+    width: 30%;
 
-    &Tag{
+    &Top {
+        position: relative;
+    }
+
+    &Tag {
         @extend .text;
         position: absolute;
-        top: 5%;
-        left: 10%;
-        background-color: $secondary-color-transparent;
+        bottom: 10%;
+        left: 5%;
+        background-color:rgba($primary-color, .65);
+        color: $white-color;
         padding: 5px 10px;
         border-radius: $border-radius;
     }

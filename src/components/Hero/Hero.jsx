@@ -2,7 +2,9 @@
 
 import styles from './Hero.module.scss'
 import Link from 'next/link'
-import img from '../../../public/dog.png'
+import imgDog from '../../../public/dog.png'
+import imgDoc from '../../../public/doc.png'
+import imgChild from '../../../public/child.png'
 import Hero_Card from './Hero_Card/Hero_Card'
 import Hero_Filter from './Hero_Filter/Hero_Filter'
 import { useState } from 'react'
@@ -12,7 +14,7 @@ const dummyData = [
     id: 1,
     title: 'Aligned with City, finishes with the same',
     by: 'por Aid-seeker para Beneficiario',
-    image: img,
+    image: imgDog,
     target: 3000,
     raised: 2500,
     query: 'Cercanas',
@@ -21,7 +23,7 @@ const dummyData = [
     id: 2,
     title: 'Aligned with City, finishes with the same',
     by: 'por Aid-seeker para Beneficiario',
-    image: img,
+    image: imgDoc,
     target: 3000,
     raised: 2500,
     query: 'Últimas',
@@ -30,7 +32,7 @@ const dummyData = [
     id: 3,
     title: 'Aligned with City, finishes with the same',
     by: 'por Aid-seeker para Beneficiario',
-    image: img,
+    image: imgChild,
     target: 3000,
     raised: 2500,
     query: 'Antiguas',
@@ -38,8 +40,11 @@ const dummyData = [
 ]
 
 export default function Hero() {
-  const [query, setQuery] = useState('')
-  const filteredData = dummyData.filter((each) => each.query === query)
+  const [query, setQuery] = useState('Todas')
+  const filteredData =
+    query === 'Todas'
+      ? dummyData
+      : dummyData.filter((each) => each.query === query)
 
   return (
     <div className={`section ${styles.hero}`} id='top'>
@@ -64,9 +69,16 @@ export default function Hero() {
           </button>
         </Link>
       </div>
-      <Hero_Filter options={dummyData.map(item => item.query)} current={query} setQuery={setQuery}/>
+      <Hero_Filter
+        options={[
+          'Todas',
+          ...new Set(dummyData.map((item) => item.query)),
+        ]}
+        current={query}
+        setQuery={setQuery}
+      />
       <div className={styles.heroShowcase}>
-        {dummyData.map((card) => (
+        {filteredData.map((card) => (
           <Hero_Card {...card} key={card.id} />
         ))}
       </div>
