@@ -2,6 +2,17 @@
     position: relative;
     width: fit-content;
 
+    &:hover {
+
+        & p img {
+            transform: rotate(180deg);
+        }
+
+        & div {
+            display: block;
+        }
+    }
+
     &Current {
         @extend .text;
         @include flex;
@@ -18,8 +29,8 @@
         position: relative;
         font-weight: bold;
 
-        &:hover+div {
-            display: block;
+        & img {
+            transition: all .5s ease;
         }
     }
 
@@ -35,10 +46,6 @@
         background-color: rgba($tertiary-color, 0.5);
         filter: blur(.5px);
         z-index: 10;
-
-        &:hover {
-            display: block;
-        }
 
         &Each {
             cursor: pointer;
