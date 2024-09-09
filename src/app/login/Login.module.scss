@@ -1,2 +1,112 @@
-.login{
+.login {
+    @include flex;
+    align-items: center;
+    gap: 0;
+
+    &Left {
+        @include flex-column;
+        padding: 0 7rem;
+
+        & p {
+            margin-bottom: 2rem !important;
+        }
+    }
+
+    &Right {
+        animation: color-gradient 5s ease-in-out infinite;
+        width: 40%;
+        height: 70vh;
+        position: relative;
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+
+        &Text,
+        & img {
+            position: absolute;
+            bottom: 0;
+        }
+
+        &Text {
+            @extend .heading;
+            left: 5%;
+            color: $white-color;
+            font-weight: bold;
+        }
+
+        & img {
+            right: -12%;
+        }
+
+    }
+
+    &Title {
+        @extend .headingSec;
+        font-size: $font-size-xl;
+    }
+
+    &Form {
+        @include flex-column;
+        gap: 3rem !important;
+        font-size: $font-size-md;
+        width: 100%;
+
+        & div {
+            position: relative;
+            width: 80%;
+
+            & label {
+                position: absolute;
+                top: -30%;
+                left: 5%;
+                padding: 5px;
+                background-color: $white-color;
+            }
+
+            & input {
+                width: 100%;
+                padding: 15px 25px;
+                border-radius: $border-radius;
+                border-width: 1px;
+
+                &:focus+label {
+                    display: none;
+                }
+            }
+        }
+
+        & button {
+            padding-top: 0.1rem;
+            padding-bottom: 0.1rem;
+            text-transform: none;
+            font-weight: 400;
+            width: 100%;
+        }
+    }
+
+    &Separator {
+        position: relative;
+        width: 100%;
+        border: 1px solid $primary-color;
+        margin: 3rem 0;
+
+        & small {
+            letter-spacing: 1px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-color: $white-color;
+            padding: 1px 2rem;
+            transform: translate(-50%, -50%);
+            font-size: $font-size-xs;
+        }
+    }
+
+    &Methods {
+        @include flex;
+        gap: 2rem;
+    }
+
+    & a {
+        margin: auto;
+    }
 }

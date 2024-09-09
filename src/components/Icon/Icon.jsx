@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-const Icon = ({ iconName, size, className }) => {
+const Icon = ({ iconName, size=24, className }) => {
   const iconUrl = `/icons/${iconName}.svg`
 
   return (

@@ -70,8 +70,3 @@ $laptop-max: $desktop - 1;
     gap: 1.5rem !important;
     flex-direction: column;
 }
-
-// Gradient\
-@mixin linear-gradient($direction: to right) {
-    background-image: linear-gradient($direction, rgba($cta-color, 0.5) 10%, rgba($cta-color, 0.4) 30%, rgba($secondary-color, 0.4) 70%, rgba($primary-color, 0.5) 120%);
-}

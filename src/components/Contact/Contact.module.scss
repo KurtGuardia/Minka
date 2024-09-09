@@ -1,5 +1,5 @@
 .contact {
-    @include linear-gradient;
+    background-image: linear-gradient(to right, rgba($cta-color, 0.5) 10%, rgba($cta-color, 0.4) 30%, rgba($secondary-color, 0.4) 70%, rgba($primary-color, 0.5) 120%);
     width: 100%;
     padding: 1rem;
     border-radius: $border-radius;

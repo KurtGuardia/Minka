@@ -1,0 +1,66 @@
+
+@keyframes color-gradient {
+    0% {
+        background-image: linear-gradient(to bottom right,
+                rgba($cta-color, 1) 0%,
+                rgba($tertiary-color, 1) 70%,
+                rgba($secondary-color, 0.7) 100%);
+
+    }
+
+    20% {
+        background-image: linear-gradient(to bottom right,
+                rgba($cta-color, 1) 3%,
+                rgba($tertiary-color, 1) 68%,
+                rgba($secondary-color, 0.7) 98%);
+    }
+
+    30% {
+        background-image: linear-gradient(to bottom right,
+                rgba($cta-color, 1) 6%,
+                rgba($tertiary-color, 1) 63%,
+                rgba($secondary-color, 0.7) 96%);
+    }
+
+    40% {
+        background-image: linear-gradient(to bottom right,
+                rgba($cta-color, 1) 8%,
+                rgba($tertiary-color, 1) 58%,
+                rgba($secondary-color, 0.7) 92%);
+    }
+
+    50% {
+        background-image: linear-gradient(to bottom right,
+                rgba($cta-color, 1) 10%,
+                rgba($tertiary-color, 1) 50%,
+                rgba($secondary-color, 0.7) 90%);
+    }
+
+    60% {
+        background-image: linear-gradient(to bottom right,
+                rgba($cta-color, 1) 8%,
+                rgba($tertiary-color, 1) 58%,
+                rgba($secondary-color, 0.7) 92%);
+    }
+
+    70% {
+        background-image: linear-gradient(to bottom right,
+                rgba($cta-color, 1) 5%,
+                rgba($tertiary-color, 1) 63%,
+                rgba($secondary-color, 0.7) 96%);
+    }
+
+    80% {
+        background-image: linear-gradient(to bottom right,
+                rgba($cta-color, 1) 2%,
+                rgba($tertiary-color, 1) 68%,
+                rgba($secondary-color, 0.7) 98%);
+    }
+
+    100% {
+        background-image: linear-gradient(to bottom right,
+                rgba($cta-color, 1) 0%,
+                rgba($tertiary-color, 1) 70%,
+                rgba($secondary-color, 0.7) 100%);
+    }
+}

@@ -4,6 +4,7 @@
 @import './_variables';
 @import './_mixins';
 @import './_utils';
+@import './_animations';
 
 
 // Define global styles
@@ -70,10 +71,4 @@ $rem-base: 10px;
     background-color: $tertiary-color;
     color: $cta-color;
   }
-}
-
-.test {
-  @include linear-gradient();
-  width: 500px;
-  height: 150px;
 }
