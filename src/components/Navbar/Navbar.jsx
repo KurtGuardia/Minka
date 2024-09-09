@@ -37,7 +37,7 @@ const Navbar = () => {
           <Link offset={150} href='/'>
             {logoIcon}
           </Link>
-        )}{' '}
+        )}
         <nav className={styles.nav}>
           <ul className={styles.ul}>
             <li className={styles.li}>
@@ -47,15 +47,25 @@ const Navbar = () => {
                 <Icon iconName='chevron-white' size={15} />
               </p>
               <ul>
-                <AnchorLink offset={150} href='#'>
+                <Link offset={150} href='/about'>
                   Nosotros
-                </AnchorLink>
-                <AnchorLink offset={150} href='#faq'>
-                  FAQ
-                </AnchorLink>
-                <AnchorLink offset={150} href='#contact'>
+                </Link>
+                {pathname === '/' ? (
+                  <AnchorLink offset={150} href='#faq'>
+                    FAQ
+                  </AnchorLink>
+                ) : (
+                  <Link href='/faq'>FAQ</Link>
+                )}{' '}
+                {pathname === '/' ? (
+                  <AnchorLink offset={150} href='#contact'>
+                    Contáctanos
+                  </AnchorLink>
+                ) : (
+                  <Link offset={150} href='/#contact'>
                   Contáctanos
-                </AnchorLink>
+                </Link>
+                )}
               </ul>
             </li>
             <li className={styles.li}>
