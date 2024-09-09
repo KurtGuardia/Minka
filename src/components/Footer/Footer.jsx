@@ -33,7 +33,7 @@ export default function Footer() {
   }
 
   return (
-    <div className={styles.footer} id='footer'>
+    <footer className={styles.footer} id='footer'>
       <div className={styles.footerIcons}>
         <AnchorLink offset={150} href='#top'>
           <Image
@@ -149,6 +149,6 @@ export default function Footer() {
         </a> - update: {date()}
          {' '}· Copyright &reg;
       </p>
-    </div>
+    </footer>
   )
 }

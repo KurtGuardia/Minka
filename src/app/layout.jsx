@@ -1,21 +1,22 @@
-import styles from './page.module.scss'
-import Navbar from '../components/Navbar/Navbar'
-import Footer from '@/components/Footer/Footer'
+// app/layout.js
+import { Suspense } from 'react';
+import Navbar from '../components/Navbar/Navbar';
+import Footer from '@/components/Footer/Footer';
+import styles from './page.module.scss';
 
 export const metadata = {
   title: 'Minka: Ayudando Bolivia',
-  description:
-    'Minka es una plataforma que centraliza las donaciones para diferentes causas en Bolivia. Es una excelente manera de encontrar causas que te importan y apoyarlas financieramente. Con Minka, puedes hacer una diferencia en las vidas de las personas necesitadas.',
-}
+  description: 'Minka es una plataforma que centraliza las donaciones para diferentes causas en Bolivia...',
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang='en' className={styles.html}>
       <body className={styles.body}>
-        <Navbar />
-        {children}
-      <Footer />
+        <Suspense fallback={<div>Loading...</div>}>
+          {children}
+        </Suspense>
       </body>
     </html>
-  )
+  );
 }
