@@ -28,6 +28,7 @@
 
         &Text {
             @extend .heading;
+            cursor: auto !important;
             left: 5%;
             color: $white-color;
             font-weight: bold;
@@ -106,7 +107,8 @@
         gap: 2rem;
     }
 
-    & a {
+    & p:last-of-type {
         margin: auto;
+        cursor: pointer;
     }
 }

@@ -5,11 +5,12 @@ import styles from './Login.module.scss'
 import Image from 'next/image'
 import isotype from '../../../public/isotype.svg'
 import Icon from '@/components/Icon/Icon'
-import Link from 'next/link'
 
 export default function LoginPage() {
+  const [isRegister, setIsRegister] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [passwordRepeat, setPasswordRepeat] = useState('')
 
   const loginMethods = [
     {
@@ -27,7 +28,7 @@ export default function LoginPage() {
     console.log('Login attempt with:', { email, password })
   }
 
-  const handleLoginMethod =({method})=>{
+  const handleLoginMethod = ({ method }) => {
     console.log('Login method:', method)
   }
 
@@ -35,11 +36,14 @@ export default function LoginPage() {
     <main className={styles.login}>
       <div className={styles.loginLeft}>
         <h2 className={styles.loginTitle}>
-        ¡Bienvenido de nuevo!
+          {!isRegister
+            ? '¡Bienvenido de nuevo!'
+            : 'Crea tu cuenta'}
         </h2>
         <p className={styles.text}>
-          Introduzca sus credenciales para acceder a su
-          cuenta.
+          {!isRegister
+            ? 'Introduzca sus credenciales para acceder a su cuenta.'
+            : 'Introduzca sus credenciales para crear su cuenta,'}
         </p>
         <form
           onSubmit={handleSubmit}
@@ -67,15 +71,35 @@ export default function LoginPage() {
             />
             <label htmlFor='password'>Contraseña</label>
           </div>
+          {isRegister && (
+            <div className={styles.loginFormInput}>
+              <input
+                type='password'
+                id='password'
+                value={passwordRepeat}
+                onChange={(e) =>
+                  setPassword(e.target.value)
+                }
+                required
+              />
+              <label htmlFor='passwordRepeat'>
+                Repite la Contraseña
+              </label>
+            </div>
+          )}
           <button
             className={styles.buttonPrimary}
             type='submit'
           >
-            Iniciar sesión
+            {!isRegister ? 'Iniciar sesión' : 'Registrarse'}
           </button>
         </form>
         <div className={styles.loginSeparator}>
-          <small>o iniciar sesión con</small>
+          <small>
+            {!isRegister
+              ? 'o iniciar sesión con'
+              : 'o crear cuenta con'}
+          </small>
         </div>
         <div className={styles.loginMethods}>
           {loginMethods.map((method, index) => (
@@ -83,10 +107,19 @@ export default function LoginPage() {
               key={index}
               className={styles.buttonSecondary}
               onClick={() => handleLoginMethod(method)}
-            ><Icon iconName={method.icon} /></button>
+            >
+              <Icon iconName={method.icon} />
+            </button>
           ))}
         </div>
-        <Link href='/create'>¿No tienes cuenta? Crea una.</Link>
+        <p
+          className={styles.text}
+          onClick={() => setIsRegister(!isRegister)}
+        >
+          {!isRegister
+            ? '¿No tienes cuenta? Crea una.'
+            : '¿Ya tienes cuenta? Accede a ella'}
+        </p>
       </div>
       <div className={styles.loginRight}>
         <p className={styles.loginRightText}>
