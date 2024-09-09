@@ -15,7 +15,7 @@ export default function LoginPage() {
   }
 
   return (
-    <main className={styles.loginContainer}>
+    <main className={styles.login}>
       <h1>Login to Minka</h1>
       <form onSubmit={handleSubmit} className={styles.loginForm}>
         <div>

@@ -1,4 +1,6 @@
 .faq {
+    margin-top: 1rem;
+
     &Subtitle {
         @extend .text;
         color: $tertiary-color;

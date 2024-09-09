@@ -6,30 +6,45 @@ import logo from '../../../public/logo-white.svg'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Link from 'next/link'
 import Icon from '../Icon/Icon'
+import { usePathname } from 'next/navigation'
+
+const logoIcon = (
+  <Image
+    src={logo}
+    alt='Minka Logo'
+    width={150}
+    height={50}
+  />
+)
 
 const Navbar = () => {
+  const pathname = usePathname()
 
   return (
     <header className={styles.navbar}>
       <div className={styles.container}>
-        <AnchorLink offset={150} href='#top'>
-          <Image
-            src={logo}
-            alt='Minka Logo'
-            width={150}
-            height={50}
-          />
-        </AnchorLink>
+        {pathname === '/' && (
+          <AnchorLink offset={150} href='#top'>
+            <Image
+              src={logo}
+              alt='Minka Logo'
+              width={150}
+              height={50}
+            />
+          </AnchorLink>
+        )}
+        {pathname !== '/' && (
+          <Link offset={150} href='/'>
+            {logoIcon}
+          </Link>
+        )}{' '}
         <nav className={styles.nav}>
           <ul className={styles.ul}>
             <li className={styles.li}>
               <div className={styles.about} />
               <p>
                 Acerca de
-                  <Icon
-                    iconName='chevron-white'
-                    size={15}
-                  />
+                <Icon iconName='chevron-white' size={15} />
               </p>
               <ul>
                 <AnchorLink offset={150} href='#'>
