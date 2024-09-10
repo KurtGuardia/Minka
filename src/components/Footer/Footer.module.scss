@@ -1,22 +1,12 @@
 .footer {
-    // Until it is responsive
-    @media (max-width: $tablet) {
-      display: none;
-    }
-
     @include flex;
     gap: 0;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     background-color: $secondary-color-transparent;
     padding: 3rem 3rem .5rem;
     border-bottom: 1.5rem $primary-color solid;
     margin: 0 -15rem;
-
-    &>div {
-        flex-grow: 1;
-        flex-shrink: 0;
-    }
 
     &Icons {
         @include flex-column;

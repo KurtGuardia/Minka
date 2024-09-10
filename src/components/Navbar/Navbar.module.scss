@@ -1,10 +1,5 @@
 .navbar {
 
-  // Until it is responsive
-  @media (max-width: $tablet) {
-    display: none;
-  }
-
   background-color: $primary-color;
   padding: .2rem 0;
   transition: all 0.3s ease-in-out;

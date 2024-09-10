@@ -56,7 +56,7 @@ export default function LoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-            />{' '}
+            />
             <label htmlFor='email'>
               Dirección de email
             </label>

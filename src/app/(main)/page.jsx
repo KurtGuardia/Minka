@@ -8,10 +8,6 @@ import Contact from '@/components/Contact/Contact'
 export default function Home() {
   return (
     <>
-      <h2 className={styles.notResponsive}>
-        NOT YET RESPONSIVE. Check it out on desktop, thank
-        you.
-      </h2>
       <div className={styles.mainContent}>
         <Hero />
         <Offer />
