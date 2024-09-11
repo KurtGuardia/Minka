@@ -14,12 +14,16 @@ $rem-base: 10px;
 .html,
 .body {
   background-color: $white-color;
+  font-size: $rem-base;
   margin: 0;
   padding: 0;
   font-family: 'Beiruti', 'Tajawal', 'Lalezar', Arial, sans-serif, system-ui, -apple-system;
   box-sizing: border-box;
-  font-size: $rem-base;
   overflow-x: hidden;
+
+  @include tablet {
+    font-size: $rem-base - 1;
+  }
 
   & main {
     overflow: hidden;
@@ -59,7 +63,7 @@ $rem-base: 10px;
 
     &-thumb {
       background-color: $secondary-color;
-      border-radius: 10px;
+      border-radius: 1rem;
     }
 
     &-track {

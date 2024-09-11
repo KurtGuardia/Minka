@@ -9,7 +9,7 @@ $laptop-max: $desktop - 1;
 }
 
 @mixin tablet {
-    @media (min-width: $tablet) and (max-width: $tablet-max) {
+    @media (max-width: $tablet-max) {
         @content;
     }
 }
