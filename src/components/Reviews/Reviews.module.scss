@@ -5,6 +5,10 @@
         grid-gap: 15rem;
         margin: 8rem auto 0;
 
+        @include tablet{
+            grid-gap: 3rem;
+        }
+
         @include laptop{
             grid-gap: 5rem;
         }
