@@ -21,7 +21,7 @@ const FaqItem = ({ question, answer }) => {
         className={styles.faqQuestion}
       >
         {question}
-        <Image
+        <img
           src={chev}
           alt='icono dropdown'
           width={15}
