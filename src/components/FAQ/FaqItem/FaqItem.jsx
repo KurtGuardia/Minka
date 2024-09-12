@@ -1,9 +1,11 @@
 'use client'
 
-import Image from 'next/image'
 import { useState } from 'react'
+import dynamic from 'next/dynamic'
 import styles from './FaqItem.module.scss'
 import chev from '../../../../public/icons/chevron.svg'
+
+const Image = dynamic(() => import('next/image'), { ssr: false })
 
 const FaqItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -23,6 +25,7 @@ const FaqItem = ({ question, answer }) => {
           src={chev}
           alt='icono dropdown'
           width={15}
+          height={15}
           className={isOpen ? styles.open : undefined}
         />
       </h3>
