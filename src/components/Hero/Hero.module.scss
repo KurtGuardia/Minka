@@ -35,9 +35,25 @@
         @include flex;
         justify-content: flex-start;
         margin: 5rem auto;
+        overflow-x: scroll;
 
         @include tablet {
             gap: 3rem;
+        }
+
+
+        &::-webkit-scrollbar {
+            width: .5rem;
+
+            &-thumb {
+                background-color: $secondary-color;
+                border-radius: .7rem;
+            }
+
+            &-track {
+                border-radius: .7rem;
+                background-color: $secondary-color-transparent;
+            }
         }
     }
 }

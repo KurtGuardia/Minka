@@ -18,6 +18,10 @@ $progress-bar-height: 7px;
                 transform: scale(1)
             }
         }
+
+        @include tablet{
+            width: 20rem;
+        }
     }
 
     &Tag {
@@ -48,6 +52,10 @@ $progress-bar-height: 7px;
         text-transform: none;
         line-height: 100%;
         margin: 1rem 0;
+
+        @include tablet{
+            font-size: 24px;
+        }
     }
 
     &Text {

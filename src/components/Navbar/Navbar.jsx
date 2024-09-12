@@ -48,7 +48,7 @@ const Navbar = () => {
             )}
             {pathname !== '/' && (
               <Link offset={150} href='/'>
-                {logoIcon}
+                {logo}
               </Link>
             )}
             <nav className={styles.nav}>

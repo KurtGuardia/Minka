@@ -1,7 +1,12 @@
 .offer {
     &List {
         @include flex;
+        flex-wrap: wrap;
         margin-top: 5rem;
+
+        @include tablet{
+            gap: 3rem;
+        }
 
 
         &Card {

@@ -1,16 +1,11 @@
 .reviews {
     & .container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 15rem;
+        @include flex;
         margin: 8rem auto 0;
 
-        @include tablet{
-            grid-gap: 3rem;
-        }
-
-        @include laptop{
-            grid-gap: 5rem;
+        @include tablet {
+            flex-wrap: wrap;
+            gap: 5rem;
         }
     }
 
@@ -25,6 +20,10 @@
         color: $black-color;
         padding: 7rem 3rem 3rem;
 
+        @include tablet {
+            padding: 5rem 1.5rem;
+        }
+
 
         & img {
             position: absolute;
@@ -33,6 +32,10 @@
             transform: translateX(-50%);
             border: .5rem $white-color solid;
             border-radius: 50%;
+
+            @include tablet {
+                top: -25%;
+            }
         }
 
         &Name {
