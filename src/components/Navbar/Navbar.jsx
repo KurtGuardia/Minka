@@ -35,7 +35,10 @@ const Navbar = () => {
     <>
       {(isDesktop || showMenu) && (
         <header className={styles.navbar}>
-          <div className={styles.container} onClick={toggleMenu}>
+          <div
+            className={styles.container}
+            onClick={toggleMenu}
+          >
             {pathname === '/' && (
               <AnchorLink offset={150} href='#top'>
                 <Image
@@ -48,7 +51,14 @@ const Navbar = () => {
             )}
             {pathname !== '/' && (
               <Link offset={150} href='/'>
-                {logo}
+                {
+                  <Image
+                    src={logo}
+                    alt='Minka Logo'
+                    width={150}
+                    height={50}
+                  />
+                }
               </Link>
             )}
             <nav className={styles.nav}>
