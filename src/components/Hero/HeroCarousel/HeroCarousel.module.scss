@@ -1,0 +1,157 @@
+.heroCarousel {
+  margin-top: 5rem;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  &:hover{
+    .heroCarouselButton{
+      background-color: $secondary-color-transparent;
+    }
+  }
+
+  &Track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+
+    &Slide {
+      flex: 0 0 calc(100% / 3);
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+  }
+
+  &Button {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    z-index: 10;
+    background-color: transparent;
+    transition: all .5s ease;
+
+    &Prev {
+      rotate: 90deg;
+      left: -1.5%;
+    }
+
+    &Next {
+      rotate: -90deg;
+      right: -1.5%;
+    }
+
+    &Play {
+      bottom: 0;
+      right: 35%;
+      top: auto;
+      transform: none;
+      color: $primary-color;
+    }
+  }
+
+  &Dots {
+    margin-top: 1REM;
+    transform: translateX(50%);
+    display: flex;
+    gap: 10px;
+
+    &Dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgba($secondary-color, 0.5);
+      border: none;
+      cursor: pointer;
+
+      &Active {
+        background-color: $secondary-color;
+      }
+    }
+  }
+}
+
+$progress-bar-height: 7px;
+
+.card {
+  cursor: pointer;
+  width: 90%;
+  margin: auto;
+
+  @include tablet {
+    // width: 60%;
+  }
+
+  &Top {
+    position: relative;
+    overflow: hidden;
+    border-radius: $border-radius;
+
+    &:hover {
+      & img {
+        transform: scale(1)
+      }
+    }
+
+    @include tablet {
+      width: 20rem;
+    }
+  }
+
+  &Tag {
+    @extend .text;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    background-color: rgba($primary-color, .65);
+    color: $white-color;
+    padding: 5px 10px;
+    border-radius: $border-radius;
+    z-index: 1;
+  }
+
+  & img {
+    border-radius: $border-radius;
+    width: 100%;
+    margin-bottom: 1rem;
+    height: auto;
+    transform: scale(1.05);
+    transition: all .5s ease;
+  }
+
+  &Title {
+    @extend .textAlt;
+    font-size: 32px;
+    letter-spacing: 0;
+    text-transform: none;
+    line-height: 100%;
+    margin: 1rem 0;
+
+    @include tablet {
+      font-size: 24px;
+    }
+  }
+
+  &Text {
+    @extend .text;
+    font-size: $font-size-lg;
+  }
+
+  &ProgressBar {
+    position: relative;
+    margin: 3rem 0;
+    width: 100%;
+    height: $progress-bar-height;
+    border-radius: $border-radius;
+    background-color: $secondary-color-transparent;
+
+    &Raised {
+      position: absolute;
+      background-color: $secondary-color;
+      height: $progress-bar-height;
+      border-radius: $border-radius;
+    }
+  }
+}
