@@ -141,7 +141,7 @@ export default function Hero() {
       <HeroCarousel
       key={query}
         cards={filteredData}
-        interval={2500}
+        interval={2000}
         transitionDuration={500}
       />
     </div>
