@@ -1,25 +1,40 @@
 .footer {
     @include flex;
     gap: 0;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
     background-color: $secondary-color-transparent;
     padding: 3rem 3rem .5rem;
     border-bottom: 1.5rem $primary-color solid;
-    margin: 0 -15rem;
+
+    @include tablet {
+        justify-content: center;
+    }
 
     &Icons {
         @include flex-column;
         align-items: center;
 
+        @include tablet {
+            margin-bottom: 2rem
+        }
+
         &Social {
             @include flex;
-            gap: 1rem !important;
+            gap: 1rem;
+
+            @include tablet {
+                gap: 3rem;
+            }
         }
     }
 
     &Info {
         @include flex;
+
+        @include tablet {
+            gap: 0;
+        }
 
         &Title {
             @extend .text;
