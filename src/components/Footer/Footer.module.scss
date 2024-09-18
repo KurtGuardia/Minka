@@ -39,7 +39,14 @@
         &Title {
             @extend .text;
             font-weight: bold;
-            margin-bottom: 2rem !important;
+        }
+
+        & p {
+            margin: 1rem 0;
+
+            @include tablet {
+                margin: .5rem 0;
+            }
         }
     }
 

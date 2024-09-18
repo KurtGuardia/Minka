@@ -35,6 +35,13 @@ $progress-bar-height-mobile: 3px;
     padding: 5px 10px;
     border-radius: $border-radius;
     z-index: 1;
+    line-height: 100%;
+
+    @include tablet{
+      bottom: 15%;
+      padding: 0 5px;
+      font-size: 14px;
+    }
   }
 
   & img {

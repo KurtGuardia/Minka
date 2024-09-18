@@ -52,7 +52,7 @@ $laptop-max: $desktop - 1;
     }
 
     @include tablet{
-        min-width: 13rem;
+        min-width: 10rem;
     }
 }
 
