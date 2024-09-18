@@ -2,6 +2,10 @@
     position: relative;
     width: fit-content;
 
+    @include tablet{
+        margin-top: 5rem;
+    }
+
     &:hover {
 
         & p img {
@@ -45,7 +49,7 @@
         width: 80%;
         background-color: rgba($tertiary-color, 0.5);
         filter: blur(.5px);
-        z-index: 9;
+        z-index: 2;
 
         &Each {
             cursor: pointer;

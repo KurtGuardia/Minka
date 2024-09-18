@@ -7,25 +7,14 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Link from 'next/link'
 import Icon from '../Icon/Icon'
 import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import HamburgerIcon from '../Hamburger/Hamburger'
+import useIsMobile from '@/hooks/useIsDesktop'
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false)
-  const [isDesktop, setIsDesktop] = useState(true)
   const pathname = usePathname()
-
-  useEffect(() => {
-    const isMobileDevice = () => {
-      return (
-        'ontouchstart' in window ||
-        navigator.maxTouchPoints > 0 ||
-        navigator.msMaxTouchPoints > 0
-      )
-    }
-
-    setIsDesktop(!isMobileDevice())
-  }, [])
+  const isMobile = useIsMobile()
 
   const toggleMenu = () => {
     setShowMenu(!showMenu)
@@ -33,7 +22,7 @@ const Navbar = () => {
 
   return (
     <>
-      {(isDesktop || showMenu) && (
+      {(!isMobile || showMenu) && (
         <header className={styles.navbar}>
           <div
             className={styles.container}
@@ -121,7 +110,7 @@ const Navbar = () => {
           </div>
         </header>
       )}
-      {!isDesktop && (
+      {isMobile && (
         <HamburgerIcon
           isOpen={showMenu}
           onClick={toggleMenu}

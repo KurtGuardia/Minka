@@ -103,8 +103,6 @@ export default function Hero() {
       useEffect(() => {
         document.documentElement.style.setProperty('--total-cards', filteredData.length);
       }, [filteredData]);
-      console.log(filteredData.length);
-
 
 
   return (

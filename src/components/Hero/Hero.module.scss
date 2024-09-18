@@ -1,6 +1,10 @@
 .hero {
     margin-bottom: 15rem;
 
+    @include tablet{
+        margin-bottom: 10rem;
+    }
+
     &Top {
         margin: 15rem auto;
 

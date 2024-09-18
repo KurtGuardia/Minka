@@ -14,7 +14,7 @@
     border: none;
     border-radius: $border-radius;
     padding: 1rem;
-    z-index: 100;
+    z-index: 1000;
     box-shadow: 4px 2px 3px rgba($black-color, .75);
 
     &:focus {

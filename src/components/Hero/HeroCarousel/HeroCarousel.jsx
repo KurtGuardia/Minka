@@ -6,7 +6,8 @@ import React, {
 } from 'react'
 import styles from './HeroCarousel.module.scss'
 import Icon from '@/components/Icon/Icon'
-import { HeroCard } from '../HeroCard/HeroCard'
+import HeroCard from '../HeroCard/HeroCard'
+import useIsMobile from '@/hooks/useIsDesktop'
 
 const HeroCarousel = ({
   cards,
@@ -17,33 +18,34 @@ const HeroCarousel = ({
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const trackRef = useRef(null)
+  const isMobile = useIsMobile()
 
   const totalCards = cards.length
-  const cardsPerSlide = 3
-  const totalSlides = totalCards - (cardsPerSlide - 1)
+  const cardsPerDisplay = isMobile ? 2 : 3
+  const totalDisplays = totalCards - (cardsPerDisplay - 1)
 
   const moveToIndex = useCallback(
     (index) => {
       if (trackRef.current) {
         trackRef.current.style.transform = `translateX(-${
-          index * (100 / cardsPerSlide)
+          index * (100 / cardsPerDisplay)
         }%)`
       }
       setCurrentIndex(index)
     },
-    [cardsPerSlide],
+    [cardsPerDisplay],
   )
 
   const nextSlide = useCallback(() => {
-    const nextIndex = (currentIndex + 1) % totalSlides
+    const nextIndex = (currentIndex + 1) % totalDisplays
     moveToIndex(nextIndex)
-  }, [currentIndex, totalSlides, moveToIndex])
+  }, [currentIndex, totalDisplays, moveToIndex])
 
   const prevSlide = useCallback(() => {
     const prevIndex =
-      (currentIndex - 1 + totalSlides) % totalSlides
+      (currentIndex - 1 + totalDisplays) % totalDisplays
     moveToIndex(prevIndex)
-  }, [currentIndex, totalSlides, moveToIndex])
+  }, [currentIndex, totalDisplays, moveToIndex])
 
   useEffect(() => {
     let intervalId
@@ -63,33 +65,28 @@ const HeroCarousel = ({
         className={styles.heroCarouselTrack}
         style={{
           transform: `translateX(-${
-            currentIndex * (100 / cardsPerSlide)
+            currentIndex * (100 / cardsPerDisplay)
           }%)`,
           transition: `transform ${transitionDuration}ms ease-in-out`,
         }}
       >
         {cards.map((card, index) => (
-          <div
-            key={index}
-            className={styles.heroCarouselTrackSlide}
-          >
-            <HeroCard {...card} />
-          </div>
+          <HeroCard {...card} key={index} />
         ))}
       </div>
 
-      <button
+      <div
         onClick={prevSlide}
         className={`${styles.heroCarouselButton} ${styles.heroCarouselButtonPrev}`}
       >
         <Icon iconName='chevron' size={15} />
-      </button>
-      <button
+      </div>
+      <div
         onClick={nextSlide}
         className={`${styles.heroCarouselButton} ${styles.heroCarouselButtonNext}`}
       >
         <Icon iconName='chevron' size={15} />
-      </button>
+      </div>
 
       {playBtn && (
         <button
@@ -101,8 +98,8 @@ const HeroCarousel = ({
       )}
 
       <div className={styles.heroCarouselDots}>
-        {[...Array(totalSlides)].map((_, index) => (
-          <button
+        {[...Array(totalDisplays)].map((_, index) => (
+          <div
             key={index}
             onClick={() => moveToIndex(index)}
             className={`${styles.heroCarouselDotsDot} ${
