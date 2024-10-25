@@ -1,44 +1,59 @@
 // Typography utility classes
 
 .heading {
-    font-size: $font-size-xxl;
+  font-size: $font-size-xxl;
 }
 
 .headingSec {
-    font-size: $font-size-xl;
+  font-size: $font-size-xl;
 }
 
 .heading,
 .headingSec {
-    color: $secondary-color;
+  color: $secondary-color;
 }
 
 .text {
-    font-size: $font-size-md;
+  font-size: $font-size-md;
 }
 
 .textAlt {
-    font-size: $font-size-mlg;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  font-size: $font-size-mlg;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .text,
 .textAlt {
-    color: $primary-color;
+  color: $primary-color;
 }
 
 // Small Components utility clases
 
 .buttonPrimary {
-    @include button-style($cta-color, $white-color);
+  @include button-style($cta-color, $white-color);
 }
 
 .buttonSecondary {
-    @include button-style($white-color, $cta-color, true);
+  @include button-style($white-color, $cta-color, true);
 
-    &>* {
-        color: $cta-color !important;
-    }
+  & > * {
+    color: $cta-color !important;
+  }
+}
+
+.error {
+  margin: 15vh auto;
+  font-size: 5rem;
+}
+
+.spinner {
+  margin: 15vh auto;
+  width: 12rem;
+  height: 12rem;
+  border: 1rem solid $secondary-color-transparent;
+  border-top: 1rem solid $primary-color;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }

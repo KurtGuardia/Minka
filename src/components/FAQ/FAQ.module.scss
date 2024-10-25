@@ -1,22 +1,22 @@
 .faq {
-    margin-top: 1rem;
+  margin-top: 1rem;
 
-    &Subtitle {
-        @extend .text;
-        color: $tertiary-color;
-        font-weight: bold;
-        margin: 2rem 0 !important;
+  &Subtitle {
+    @extend .text;
+    color: $tertiary-color;
+    font-weight: bold;
+    margin: 2rem 0 !important;
+  }
+
+  &SeeMore {
+    @extend .text;
+    transition: all 0.5s ease;
+    color: $primary-color;
+
+    &:hover {
+      cursor: pointer;
+      color: $secondary-color;
+      letter-spacing: 0.25px;
     }
-
-    &SeeMore {
-        @extend .text;
-        transition: all .5s ease;
-        color: $primary-color;
-
-        &:hover {
-            cursor: pointer;
-            color: $secondary-color;
-            letter-spacing: .25px;
-        }
-    }
+  }
 }

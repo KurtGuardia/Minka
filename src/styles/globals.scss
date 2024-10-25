@@ -6,7 +6,6 @@
 @import './_utils';
 @import './_animations';
 
-
 // Define global styles
 
 $rem-base: 10px;
@@ -17,7 +16,8 @@ $rem-base: 10px;
   font-size: $rem-base;
   margin: 0;
   padding: 0;
-  font-family: 'Beiruti', 'Tajawal', 'Lalezar', Arial, sans-serif, system-ui, -apple-system;
+  font-family: 'Beiruti', 'Tajawal', 'Lalezar', Arial,
+    sans-serif, system-ui, -apple-system;
   box-sizing: border-box;
   overflow-x: hidden;
 
@@ -42,7 +42,7 @@ $rem-base: 10px;
     }
 
     p {
-      margin: 0
+      margin: 0;
     }
   }
 
@@ -50,11 +50,12 @@ $rem-base: 10px;
     @extend .text;
     text-decoration: none;
     border-bottom: 1px solid transparent;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
   }
 
   & button {
-    font-family: 'Beiruti', 'Tajawal', 'Lalezar', Arial, sans-serif, system-ui, -apple-system;
+    font-family: 'Beiruti', 'Tajawal', 'Lalezar', Arial,
+      sans-serif, system-ui, -apple-system;
   }
 
   ::-webkit-scrollbar {
